@@ -9,12 +9,28 @@
   </head>
   <body>
 
-  <div class="row">
-    <div class="veg-grid .small-12.columns">
-      <img src="/images/brussel_sprouts.jpg">
-      <img src="/images/carrot.jpg">
-      <img src="/images/onion.jpg">
-      <img src="/images/tomato.png">
+  <div class="header">
+    <div class="title">Boston</div>
+
+    <form class="date" action="/" method="post">
+      <label for="date">Choose a date:</label>
+      <input type="date" name="ripe_date">
+      <input type="submit">
+    </form>
+  </div>
+
+  <div class="image-container">
+    <div class="row">
+    <% ripe.each do |vegetable| %>
+      <div class="small-<%=col_size %> column end"><img src="/images/<%= vegetable %>.jpg" id="ripe"></div>
+    <% end %>
+      </div>
+
+    <div class="row" id="unripe_row">
+    <% not_ripe.each do |vegetable| %>
+      <div class="small-2 column end"><img src="/images/<%= vegetable %>.jpg" id="unripe"></div>
+    <% end %>
+      </div>
     </div>
   </div>
 

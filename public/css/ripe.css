@@ -1,0 +1,43 @@
+.date {
+  padding-left: 20px;
+  width: 200px;
+}
+
+.header .title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 48px;
+  text-align: center;
+}
+
+.image-container {
+  margin-top: 25px;
+}
+
+#ripe {
+  border: 2px solid green;
+  margin-top: 15px;
+  border-radius: 50%;
+}
+
+#unripe {
+  border: 2px solid brown;
+  margin-top: 10px;
+  -webkit-filter: grayscale(90%);
+  border-radius: 50%;
+}
+
+.row {
+  width: 65%;
+}
+
+#unripe_row {
+  margin-top: 25px;
+  border-top: 2px solid black;
+}
+
+/*
+  This applies a gray scale to images, pretty cool
+  element.style {
+  -webkit-filter: grayscale(80%);
+ */
