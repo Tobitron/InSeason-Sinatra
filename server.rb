@@ -59,9 +59,9 @@ def ripe_vegetables(vegetable_list)
       conn.exec("SELECT end_day FROM boston WHERE vegetable = ($1)", [vegetable]).to_a[0]["end_day"].to_i
     end
 
-    if winter_veg?(vegetable)
-      date += 365
-    end
+    # if winter_veg?(vegetable)
+    #   date += 365
+    # end
 
     if (start_day..end_day).include?(date)
       ripe_vegetables << vegetable
@@ -70,7 +70,7 @@ def ripe_vegetables(vegetable_list)
     end
   end
 
-  return ripe_vegetables, not_ripe_vegetables
+  return ripe_vegetables, not_ripe_vegetables, date
 end
 
 def get_col_size(ripe)
@@ -95,9 +95,10 @@ end
 get "/" do
   ripe = ripe_vegetables(BOS_VEGETABLES)[0]
   not_ripe = ripe_vegetables(BOS_VEGETABLES)[1]
+  date = ripe_vegetables(BOS_VEGETABLES)[2]
   col_size = get_col_size(ripe)
 
-  erb :index, locals: { col_size: col_size, ripe: ripe, not_ripe: not_ripe }
+  erb :index, locals: { col_size: col_size, ripe: ripe, not_ripe: not_ripe, date: date }
 end
 
 post "/" do

@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/css/foundation.min.css">
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Marvel' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/css/ripe.css">
     <title>Is It Ripe Yet?</title>
   </head>
@@ -11,18 +13,14 @@
 
   <div class="header">
     <div class="title">Boston</div>
-
-    <form class="date" action="/" method="post">
-      <label for="date">Choose a date:</label>
-      <input type="date" name="ripe_date">
-      <input type="submit">
-    </form>
   </div>
 
   <div class="image-container">
     <div class="row">
     <% ripe.each do |vegetable| %>
-      <div class="small-<%=col_size %> column end"><img src="/images/<%= vegetable %>.jpg" id="ripe"></div>
+      <div class="small-<%=col_size %> column ripe end"><img src="/images/<%= vegetable %>.jpg" id="ripe">
+        <p class="veg-text"><%= vegetable.upcase %></p>
+      </div>
     <% end %>
       </div>
 
@@ -33,6 +31,14 @@
       </div>
     </div>
   </div>
+
+  <form class="date" action="/" method="post">
+    <label for="date">Choose a date:</label>
+    <input type="date" name="ripe_date">
+    <input type="submit">
+  </form>
+
+  Day of year: <%= date %>
 
   </body>
 </html>
