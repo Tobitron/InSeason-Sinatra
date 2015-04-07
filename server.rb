@@ -1,4 +1,3 @@
-require 'pg'
 require 'time'
 require 'date'
 require_relative 'models/today'
