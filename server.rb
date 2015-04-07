@@ -1,8 +1,6 @@
-require 'sinatra'
 require 'pg'
 require 'time'
 require 'date'
-require 'pry'
 require_relative 'models/today'
 
 enable :sessions
