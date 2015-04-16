@@ -1,0 +1,2 @@
+/Users/tobiaskahn/.rubies/ruby-2.0.0-p576/bin/ruby extconf.rb 
+/Users/tobiaskahn/.rubies/ruby-2.0.0-p576/bin/ruby: invalid option -A  (-h will show valid options) (RuntimeError)
