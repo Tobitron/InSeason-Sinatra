@@ -32,9 +32,9 @@ def winter_veg?(vegetable)
   end
 
   if winter_check == "t"
-    return true
+    true
   else
-    return false
+    false
   end
 end
 
@@ -58,6 +58,7 @@ def ripe_vegetables(vegetable_list)
       conn.exec("SELECT end_day FROM boston WHERE vegetable = ($1)", [vegetable]).to_a[0]["end_day"].to_i
     end
 
+    # Come back to this asap, adding 365 to all dates
     # if winter_veg?(vegetable)
     #   date += 365
     # end
@@ -87,7 +88,7 @@ def get_col_size(ripe)
     col_size = 2
   end
 
-  return col_size
+   col_size
 end
 
 get "/" do
