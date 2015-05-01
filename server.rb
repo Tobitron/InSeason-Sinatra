@@ -1,5 +1,8 @@
+require 'sinatra'
+require 'pg'
 require 'time'
 require 'date'
+require 'pry'
 require_relative 'models/today'
 
 enable :sessions
@@ -13,7 +16,6 @@ def db_connection
   end
 end
 
-# Create an array of all vegetables
 all_veg = db_connection do |conn|
   conn.exec("SELECT vegetable FROM boston;")
 end
@@ -87,7 +89,6 @@ def get_col_size(ripe)
 
   return col_size
 end
-
 
 get "/" do
   ripe = ripe_vegetables(BOS_VEGETABLES)[0]
